@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZURIS - Medical Services</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background: #71100F;
+            --text: #71100F;
+            --golde: #FBDC6A;
+            --white: #ffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .lang-btn {
+            background: var(--background);
+            color: var(--golde);
+            border: none;
+            padding: 0.5rem 1.5rem;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .lang-btn.active {
+            background: var(--golde);
+            color: var(--background);
+        }
+
+        /* RTL Styles */
+        html[dir="rtl"] {
+            direction: rtl;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        html[dir="rtl"] .language-switcher {
+            right: auto;
+            left: 20px;
+        }
+
+        body {
+            line-height: 1.6;
+            background: var(--background);
+            color: var(--background);
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: var(--background);
+            padding: 0.25rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--background);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            position: absolute;
+            left: 10px;
+        }
+
+        .logo img {
+            width: 80px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            margin: 0 auto;
+        }
+
+        .menu-toggle {
+            position: absolute;
+            right: 20px;
+            display: none;
+            cursor: pointer;
+            color: var(--golde);
+            font-size: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--golde);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(113, 16, 15, 0.8), rgba(113, 16, 15, 0.8)), url('/azouris/pics/IMG_5904.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--golde);
+            padding: 0 1rem;
+            padding-bottom: 40%;
+        }
+
+        .hero-content img {
+            max-width: 809px;
+            width: 80%;
+            margin-top: -40%;
+            padding-top: 100%;
+            position:static ;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--background);
+            color: var(--golde);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+/* Enhanced Consultation Button */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 1.2rem 2.5rem;
+    background: linear-gradient(135deg, #FBDC6A 0%, #F9D04A 100%);
+    color: #71100F !important;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 4px 15px rgba(251, 220, 106, 0.3);
+    margin-bottom: 1.5rem;
+}
+
+/* Animated Icon */
+.cta-button i {
+    margin-right: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(251, 220, 106, 0.5);
+}
+
+.cta-button:hover i {
+    transform: rotate(-10deg);
+}
+
+/* Click Animation */
+.cta-button:active {
+    transform: scale(0.95);
+}
+
+/* Shine Effect */
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255,255,255,0) 0.25rem,
+        rgba(255,255,255,0.3) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    transform: rotate(30deg) translate(-20%, -100%);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: rotate(30deg) translate(-20%, -100%); }
+    100% { transform: rotate(30deg) translate(120%, 100%); }
+}
+
+/* Mobile Sticky Version */
+@media (max-width: 768px) {
+    .sticky-cta {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        box-shadow: 0 4px 15px rgba(251, 220, 106, 0.4);
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+}
+
+/* Trust Badge */
+.trust-badge {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--golde);
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+        /* Sections */
+        .section-wrapper {
+            background: var(--white);
+            padding: 1rem 0;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text);
+            font-size: 2.5rem;
+        }
+
+        /* why_us Section */
+        .why_us-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .why_us-image img {
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        .why_us-text {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--golde);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 2px solid var(--text);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--background);
+            margin-bottom: 1rem;
+        }
+
+        /* Prices Section */
+        .prices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .price-item {
+            background: var(--golde);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid var(--text);
+            transition: transform 0.3s;
+        }
+
+        .price-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .price-icon {
+            font-size: 2.5rem;
+            color: var(--background);
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .whatsapp-btn {
+            background: #71100F;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            background: #008000;
+        }
+
+        .email-collection {
+            margin-top: 2rem;
+        }
+
+        #user-email {
+            width: 100%;
+            padding: 12px;
+            margin: 1rem 0;
+            border: 2px solid var(--background);
+            border-radius: 5px;
+            background: transparent;
+            color: var(--background);
+        }
+
+        .send-email {
+            background: var(--background);
+            color: var(--golde);
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .send-email:hover {
+            background: var(--white);
+            color: var(--golde);
+            border: 2px solid var(--background);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--background);
+            color: var(--golde);
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .social-icons a {
+            color: var(--golde);
+            font-size: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--background);
+                flex-direction: column;
+                padding: 1rem;
+                text-align: center;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .why_us-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content img {
+                width: 100%;
+            }
+        }
+
+        /* RTL Adjustments */
+        html[dir="rtl"] .logo {
+            left: auto;
+            right: 20px;
+        }
+
+        html[dir="rtl"] .nav-links {
+            margin-right: auto;
+            margin-left: 0;
+        }
+
+        html[dir="rtl"] .service-card,
+        html[dir="rtl"] .price-item {
+            text-align: right;
+            direction: rtl;
+        }
+
+        html[dir="rtl"] .hero-content,
+        html[dir="rtl"] .why_us-content {
+            direction: rtl;
+        }
+
+        html[dir="rtl"] .menu-toggle {
+            right: auto;
+            left: 20px;
+        }
+        .language-switcher {
+            z-index: 1001; /* Higher than nav-links */
+        }
+
+        html[dir="rtl"] .nav-links {
+            margin-right: 120px; /* Space for language switcher */
+        }
+
+        @media (max-width: 768px) {
+            html[dir="rtl"] .nav-links {
+                margin-right: 0;
+                padding-right: 20px;
+            }
+            
+            .language-switcher {
+                top: 25px;
+                right: 80px;
+            }
+            
+            html[dir="rtl"] .language-switcher {
+                left: 80px;
+                right: auto;
+            }
+        }
+
+        /* Price Items Fix */
+        .price-icon.fas.fa-bone {
+            transform: rotate(45deg);
+        }
+        .feedback-slider {
+        overflow: hidden;
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .feedback-track {
+        display: flex;
+        animation: scroll 30s linear infinite;
+    }
+
+    .feedback-item {
+        flex: 0 0 300px;
+        margin: 0 20px;
+        padding: 2rem;
+        background: var(--golde);
+        border-radius: 10px;
+        border: 2px solid var(--text);
+    }
+
+    .feedback-author {
+        margin-top: 1rem;
+        font-weight: bold;
+        color: var(--background);
+    }
+
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    html[dir="rtl"] .feedback-track {
+        animation-direction: reverse;
+    }
+
+    /* Updated Kinesiotherapy Icon */
+    .fa-hands-helping {
+        transform: rotate(-15deg);
+    }
+    .collaboration {
+        margin: 2rem 0;
+        text-align: center;
+    }
+
+    .clinic-logos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin: 1.5rem 0;
+    }
+
+    .clinic-logo {
+        max-width: 150px;
+        height: auto;
+        transition: transform 0.3s ease;
+        margin: 10px;
+    }
+
+    .clinic-logo:hover {
+        transform: scale(1.05);
+    }
+
+    /* RTL Adjustments */
+    html[dir="rtl"] .collaboration h4 {
+        font-family: 'Cairo', sans-serif;
+    }
+
+    @media (max-width: 768px) {
+        .clinic-logo {
+            max-width: 120px;
+            margin: 8px;
+        }
+    }
+        /* Feedback Button Styles */
+        .feedback-btn {
+        background: var(--golde);
+        color: var(--background) !important;
+        padding: 0.5rem 1.5rem;
+        border-radius: 20px;
+        margin-left: 1rem;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .feedback-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .feedback-btn i {
+        font-size: 1.1rem;
+    }
+
+    /* RTL Adjustments */
+    html[dir="rtl"] .feedback-btn {
+        margin-left: 0;
+        margin-right: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .feedback-btn {
+            margin: 0.5rem auto;
+            width: max-content;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#home">
+                    <img src="/azouris/pics/A.png" alt="AZURIS Logo">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#home" data-i18n="home">Home</a>
+                <a href="#why_us" data-i18n="why_us">Why_Us</a>
+                <a href="#services" data-i18n="services">Services</a>
+                <a href="#feedbacks"  data-i18n="feedbacks_button">
+                <a href="#prices" data-i18n="prices">Prices</a>
+                </a>
+    
+                <a href="#contact" data-i18n="contact">Contact</a>
+            </div>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ar">العربية</button>
+                <button class="lang-btn" data-lang="fr">FR</button>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="/azouris/pics/D.png"  alt="AZURIS Medical"> 
+            <a href="https://wa.me/212708767926" target="_blank" class="cta-button">
+                <i class="fas fa-calendar-check"></i>
+                <span data-i18n="cta_button">BOOK A CONSULTATION</span>
+            </a>
+            <span class="trust-badge" data-i18n="trust_note">✓ 98% Client Satisfaction</span>
+            
+            <script>
+            // Add hover sound effect (optional)
+            document.querySelector('.cta-button').addEventListener('mouseenter', () => {
+                new Audio('/azouris/pics/freereadtextfile.mp3').play();
+            });
+            </script>
+            
+        </div>
+    </section>
+    
+    <div class="section-wrapper">
+        <section id="why_us" class="section">
+            <h2 class="section-title" data-i18n="why_us_title">WHY CHOOSE US</h2>
+            <div class="why_us-content">
+                <div class="why_us-image">
+                    <img src="/azouris/pics/F72480B0-7498-4EF4-909B-3AD31C90EBE6_1_105_c.jpeg" alt="Medical Team">
+                </div>
+                <div class="why_us-text" data-i18n="why_us_text"></div>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <h2 class="section-title" data-i18n="services">SERVICES</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-user-md"></i></div>
+                    <h3 data-i18n="service1_title">Medical Consultation</h3>
+                    <p data-i18n="service1_desc">Expert medical consultation from experienced professionals</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-hand-holding-medical"></i></div>
+                    <h3 data-i18n="service2_title">Nursing Services</h3>
+                    <p data-i18n="service2_desc">Professional nursing care at your convenience</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-ambulance"></i></div>
+                    <h3 data-i18n="service3_title">Ambulance Services</h3>
+                    <p data-i18n="service3_desc">24/7 emergency medical transportation</p>
+                </div>
+            </div>
+        </section>
+        <section id="feedbacks" class="section">
+            <h2 class="section-title" data-i18n="feedbacks">CLIENTS FEEDBACKS</h2>
+            <div class="feedback-slider">
+                <div class="feedback-track">
+                    <!-- Feedback items will be duplicated for continuous animation -->
+                    <div class="feedback-item" data-i18n="feedback1">
+                        "Professional service and excellent care!"
+                        <div class="feedback-author">- Sarah M.</div>
+                    </div>
+                    <div class="feedback-item" data-i18n="feedback2">
+                        "Quick response and skilled staff."
+                        <div class="feedback-author">- Ahmed K.</div>
+                    </div>
+                    <div class="feedback-item" data-i18n="feedback3">
+                        "Highly recommended medical services."
+                        <div class="feedback-author">- Marie D.</div>
+                    </div>
+                    <!-- Duplicate items for continuous animation -->
+                    <div class="feedback-item" data-i18n="feedback1">
+                        "Professional service and excellent care!"
+                        <div class="feedback-author">- Sarah M.</div>
+                    </div>
+                    <div class="feedback-item" data-i18n="feedback2">
+                        "Quick response and skilled staff."
+                        <div class="feedback-author">- Ahmed K.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="prices" class="section">
+            <h2 class="section-title" data-i18n="prices">PRICES</h2>
+            <div class="prices-grid">
+                <div class="price-item">
+                    <i class="fas fa-video price-icon"></i>
+                    <h3 data-i18n="price1_title">Online Consultation</h3>
+                    <p data-i18n="price1_value">From 50 MAD</p>
+                </div>
+                <div class="price-item">
+                    <i class="fas fa-home price-icon"></i>
+                    <h3 data-i18n="price2_title">Home Visit</h3>
+                    <p data-i18n="price2_value">From 300 MAD</p>
+                </div>
+                <div class="price-item">
+                    <i class="fas fa-user-nurse price-icon"></i>
+                    <h3 data-i18n="price3_title">Nursing Services</h3>
+                    <p data-i18n="price3_value">From 100 MAD</p>
+                </div>
+                <div class="price-item">
+                    <i class="fas fa-person-running price-icon"></i>
+                    <h3 data-i18n="price4_title">Kinesiotherapy</h3>
+                    <p data-i18n="price4_value">From 200 MAD</p>
+                </div>
+                <div class="price-item">
+                    <i class="fas fa-ambulance price-icon"></i>
+                    <h3 data-i18n="price5_title">Ambulance Services</h3>
+                    <p data-i18n="price5_value">From 300 MAD</p>
+                </div>
+                <div class="price-item">
+                    <i class="fas fa-first-aid price-icon"></i>
+                    <h3 data-i18n="price6_title">First Aid Training</h3>
+                    <p data-i18n="price6_value">From 250 MAD/person</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 class="section-title" data-i18n="contact_title">CONTACT US</h2>
+            <div class="contact-content">
+                <a href="https://wa.me/212708767926" target="_blank" class="cta-button whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    <span data-i18n="whatsapp_cta">Chat on WhatsApp</span>
+                </a>
+                <script>
+                // Add hover sound effect (optional)
+                document.querySelector('.whatsapp-btn').addEventListener('mouseenter', () => {
+                    new Audio('/azouris/pics/freereadtextfile.mp3').play();
+                });
+                </script>
+                <div class="email-collection">
+                    <input type="email" id="user-email" placeholder="Enter your email" data-i18n="email_placeholder">
+                    <button class="cta-button send-email" data-i18n="send_email">Send Email</button>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="collaboration">
+            <h4 data-i18n="collab_title">In Collaboration With</h4>
+            <div class="clinic-logos">
+                <!-- <a href="https:" target="_blank"> -->
+                    <img src="/azouris/pics/logo-clinique-international-1024.png" alt="Clinique Internationale Marrakech" class="clinic-logo">
+                </a>
+                <!-- <a href="https:" target="_blank"> -->
+                    <img src="/azouris/pics/logo-hupm.png" alt="Hôpital Universitaire Privé Marrakech" class="clinic-logo">
+                </a>
+                <!-- <a href="https:" target="_blank"> -->
+                    <img src="/azouris/pics/header-logo.png" alt="Clinique Le Marrakech" class="clinic-logo">
+                </a>
+                <!-- <a href="https:" target="_blank"> -->
+                    <img src="/azouris/pics/logoCHU-removebg-preview.png" alt="CHU MOHAMMED 6" class="clinic-logo">
+                </a>
+                <!-- <a href="https:" target="_blank"> -->
+                    <img src="/azouris/pics/logo.png" alt="Clinique Le Marrakech" class="clinic-logo">
+                </a>
+                
+            </div>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/abdelwahab-zourgani-a1a18132b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/212708767926" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/azuris_med?igsh=ajI0enkxMWg0MmVs&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</div>
+        <p>&copy; <span data-i18n="copyright">2025</span> AZURIS MED. <span data-i18n="rights">All rights reserved</span></p>
+    </footer>
+
+    <script>
+        const languageSwitcher = {
+            currentLang: 'en',
+            translations: {
+                en: {
+                    home: "Home",
+                    why_us: "Why Us",
+                    services: "Services",
+                    prices: "Prices",
+                    contact: "Contact",
+                    why_us_title: "WHY CHOOSE US",
+                    hero_text: "Your Trusted Healthcare Partner",
+                    cta_button: "BOOK A CONSULTATION",
+                    why_us_text: "Because your health deserves the best! At AZURIS MED , we go beyond just providing healthcare—we deliver trust, excellence, and care tailored to you. Our dedicated team of professionals is committed to making quality healthcare accessible, reliable, and compassionate.We believe in personalized attention, innovation, and efficiency, ensuring that every service we offer is designed with your well-being in mind. Whether it’s expert medical care, emergency support, or specialized treatments, we are here to simplify healthcare and bring it closer to you.",
+                    service1_title: "Medical Consultation",
+                    service1_desc: "Expert medical consultation from experienced professionals",
+                    service2_title: "Nursing Services",
+                    service2_desc: "Professional nursing care at your convenience",
+                    service3_title: "Ambulance Services",
+                    service3_desc: "24/7 emergency medical transportation",
+                    price1_title: "Online Consultation",
+                    price1_value: "From 50 MAD",
+                    price2_title: "Home Visit",
+                    price2_value: "From 300 MAD",
+                    price3_title: "Nursing Services",
+                    price3_value: "From 100 MAD",
+                    contact_title: "CONTACT US",
+                    whatsapp_cta: "Chat on WhatsApp",
+                    email_placeholder: "Enter your email",
+                    send_email: "Send Email",
+                    copyright: "2025",
+                    rights: "All rights reserved",
+                    price4_title: "Kinesiotherapy",
+                    price4_value: "From 200 MAD",
+                    price5_title: "Ambulance Services",
+                    price5_value: "From 300 MAD",
+                    price6_title: "First Aid Training", 
+                    price6_value: "From 250 MAD/person",
+                    feedbacks: "Client Feedbacks",
+                    feedback1: `"Professional service and excellent care!"`,
+                    feedback2: `"Quick response and skilled staff."`,
+                    feedback3: `"Highly recommended medical services."`,
+                    collab_title: "In Collaboration With",
+                    feedbacks_button: "Feedbacks",
+                    cta_button: "BOOK NOW ➔",
+                    trust_note: "✓ 98% Client Satisfaction"
+                },
+                ar: {
+                    home: "الرئيسية",
+                    why_us: "لماذا نحن؟",
+                    services: "الخدمات",
+                    prices: "الأسعار",
+                    contact: "اتصل بنا",
+                    why_us_title: "لماذا تختارنا؟",
+                    hero_text: "شريككم الموثوق في الرعاية الصحية",
+                    cta_button: "احجز استشارة",
+                    why_us_text: "لأن صحتك تستحق الأفضل! في AZURIS MED، نتجاوز مجرد توفير الرعاية الصحية - نحن نقدم الثقة والتميز والرعاية المصممة خصيصا لك. يلتزم فريقنا المتفاني من المهنيين بجعل الرعاية الصحية عالية الجودة متاحة وموثوقة ورحيمة.نحن نؤمن بالاهتمام الشخصي والابتكار والكفاءة، مما يضمن أن كل خدمة نقدمها مصممة مع وضع رفاهيتك في الاعتبار. سواء كانت رعاية طبية متخصصة أو دعم طارئ أو علاجات متخصصة، فنحن هنا لتبسيط الرعاية الصحية وتقريبها منك.",
+                    service1_title: "استشارة طبية",
+                    service1_desc: "استشارات طبية من أطباء ذوي خبرة",
+                    service2_title: "خدمات التمريض",
+                    service2_desc: "رعاية تمريضية محترفة في منزلك",
+                    service3_title: "خدمات الإسعاف",
+                    service3_desc: "خدمات الإسعاف الطبي على مدار الساعة",
+                    price1_title: "استشارة عن بعد",
+                    price1_value: "بداية من 50 درهم",
+                    price2_title: "زيارة منزلية",
+                    price2_value: "بداية من 300 درهم",
+                    price3_title: "خدمات التمريض",
+                    price3_value: "بداية من 100 درهم",
+                    contact_title: "اتصل بنا",
+                    whatsapp_cta: "محادثة واتساب",
+                    email_placeholder: "أدخل بريدك الإلكتروني",
+                    send_email: "إرسال البريد",
+                    copyright: "٢٠٢٥",
+                    rights: "جميع الحقوق محفوظة",
+                    price4_title: "العلاج الطبيعي",
+                    price4_value: "بداية من 200 درهم",
+                    price5_title: "خدمات الإسعاف",
+                    price5_value: "بداية من 300 درهم",
+                    price6_title: "تدريب الإسعافات الأولية",
+                    price6_value: "بداية من 250 درهم/شخص",
+                    feedbacks: "آراء العملاء",
+                    feedback1: `"خدمة احترافية ورعاية ممتازة!"`,
+                    feedback2: `"استجابة سريعة وطاقم ماهر."`,
+                    feedback3: `"خدمات طبية موصى بها بشدة."`,
+                    collab_title: "بالتعاون مع",
+                    feedbacks_button: "الآراء",
+                    cta_button: "احجز الآن ➔",
+                    trust_note: "✓ 98% رضا العملاء"
+                },
+                fr: {
+                    home: "Accueil",
+                    why_us: "Pourquoi Nous",
+                    services: "Services",
+                    prices: "Prix",
+                    contact: "Contact",
+                    why_us_title: "Pourquoi nous choisir?",
+                    hero_text: "Votre partenaire de santé de confiance",
+                    cta_button: "RÉSERVER UNE CONSULTATION",
+                    why_us_text: " Parce que votre santé mérite le meilleur ! Chez AZURIS MED, nous allons au-delà de la simple fourniture de soins de santé - nous offrons confiance, excellence et soins adaptés à vos besoins. Notre équipe de professionnels dévoués s'engage à rendre les soins de santé de qualité accessibles, fiables et compatissants.Nous croyons en l'attention personnalisée, l'innovation et l'efficacité, en nous assurant que chaque service que nous offrons est conçu avec votre bien-être à l'esprit. Qu'il s'agisse de soins médicaux experts, d'un soutien d'urgence ou de traitements spécialisés, nous sommes là pour simplifier les soins de santé et les rapprocher de vous.",
+                    service1_title: "Consultation médicale",
+                    service1_desc: "Consultation médicale par des professionnels expérimentés",
+                    service2_title: "Services infirmiers",
+                    service2_desc: "Soins infirmiers professionnels à domicile",
+                    service3_title: "Services d'ambulance",
+                    service3_desc: "Transport médical d'urgence 24h/24",
+                    price1_title: "Consultation en ligne",
+                    price1_value: "À partir de 50 MAD",
+                    price2_title: "Visite à domicile",
+                    price2_value: "À partir de 300 MAD",
+                    price3_title: "Soins infirmiers",
+                    price3_value: "À partir de 100 MAD",
+                    contact_title: "NOUS CONTACTER",
+                    whatsapp_cta: "Discuter sur WhatsApp",
+                    email_placeholder: "Entrez votre email",
+                    send_email: "Envoyer l'email",
+                    copyright: "2025",
+                    rights: "Tous droits réservés",
+                    price4_title: "Kinésithérapie",
+                    price4_value: "À partir de 200 MAD",
+                    price5_title: "Services d'ambulance",
+                    price5_value: "À partir de 300 MAD",
+                    price6_title: "Formation premiers secours",
+                    price6_value: "À partir de 250 MAD/personne",
+                    feedbacks: "Avis des Clients",
+                    feedback1: `"Service professionnel et excellente prise en charge!"`,
+                    feedback2: `"Réponse rapide et personnel qualifié."`,
+                    feedback3: `"Services médicaux hautement recommandés."`,
+                    collab_title: "En Collaboration Avec",
+                    feedbacks_button: "Avis",
+                    cta_button: "RÉSERVER MAINTENANT ➔",
+                    trust_note: "✓ 98% Satisfaction client"           
+                }
+            },
+            init() {
+                const savedLang = localStorage.getItem('siteLang') || 'en';
+                this.switchLanguage(savedLang);
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        this.switchLanguage(e.target.dataset.lang);
+                    });
+                });
+            },
+            switchLanguage(lang) {
+                this.currentLang = lang;
+                document.documentElement.lang = lang;
+                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+                localStorage.setItem('siteLang', lang);
+                this.updateContent();
+                this.updateActiveButton();
+            },
+            updateContent() {
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.dataset.i18n;
+                    el.textContent = this.translations[this.currentLang][key] || '';
+                });
+            },
+            updateActiveButton() {
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === this.currentLang);
+                });
+            }
+        };
+
+        // Initialize language switcher
+        languageSwitcher.init();
+
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Email validation
+        document.querySelector('.send-email').addEventListener('click', () => {
+            const email = document.getElementById('user-email').value;
+            if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                window.location.href = `mailto:azurismed@gmail.com?subject=New%20Contact&body=Email:%20${email}`;
+            } else {
+                alert(languageSwitcher.translations[languageSwitcher.currentLang].email_error || 'Invalid email');
+            }
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+        document.querySelector('.feedback-track').addEventListener('mouseenter', () => {
+    document.querySelector('.feedback-track').style.animationPlayState = 'paused';
+});
+
+document.querySelector('.feedback-track').addEventListener('mouseleave', () => {
+    document.querySelector('.feedback-track').style.animationPlayState = 'running';
+});
+    </script>
+</body>
+</html>
