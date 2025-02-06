@@ -116,8 +116,12 @@
         }
 
         /* Hero Section */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
         .hero {
-            background: linear-gradient(rgba(113, 16, 15, 0.8), rgba(113, 16, 15, 0.8)), url('/pics/IMG_5904.jpeg');
+            background: linear-gradient(rgba(113, 16, 15, 0.8), rgba(113, 16, 15, 0.8)), 
+                        url('../pics/img_5904.jpg') no-repeat center center/cover;
+            /* Add fallback */
+            background-color: var(--background);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -129,6 +133,7 @@
             color: var(--golde);
             padding: 0 1rem;
             padding-bottom: 40%;
+        }
         }
 
         .hero-content img {
@@ -614,7 +619,37 @@
             width: max-content;
         }
     }
-
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem;
+    }
+    
+    .logo {
+        position: static;
+        transform: none;
+        margin-right: auto;
+    }
+    
+    .logo img {
+        width: 60px; /* Reduced logo size */
+    }
+    
+    .language-switcher {
+        top: 15px;
+        right: 60px; /* Move left to avoid overlap */
+        transform: none;
+        gap: 0.5rem;
+    }
+    
+    html[dir="rtl"] .language-switcher {
+        left: 60px;
+        right: auto;
+    }
+    
+    .menu-toggle {
+        right: 15px;
+    }
+}
     </style>
 </head>
 <body>
