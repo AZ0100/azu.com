@@ -638,10 +638,37 @@
 
 /* Header Mobile Fix */
 @media (max-width: 900px) {
+@media (max-width: 1200px) {
+/* Logo Styles */
+.logo {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.logo img {
+    width: 100px; /* Increased size */
+    transition: transform 0.3s ease;
+}
+
+/* Arabic Version */
+html[dir="rtl"] .logo {
+    left: auto;
+    right: 1px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
     .logo img {
-        width: 50px; /* Smaller logo */
-        margin-left: 5px;        
-/*         padding-top: 10%; */
+        width: 100px; /* Slightly smaller for mobile */
+        margin-left: -10px;
+    }
+    
+    html[dir="rtl"] .logo img {
+        margin-left: 0;
+        margin-right: 20px;
     }
     
     .language-switcher {
