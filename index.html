@@ -8,10 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --background: #71100F;
-            --text: #71100F;
+            --background: #ffff;
+            --text: #349CA5;
             --golde: #FBDC6A;
-            --white: #ffff;
+            --white: #349CA5;
         }
 
         * {
@@ -33,7 +33,7 @@
 
         .lang-btn {
             background: var(--background);
-            color: var(--golde);
+            color: var(--white);
             border: none;
             padding: 0.5rem 1.5rem;
             cursor: pointer;
@@ -43,7 +43,7 @@
         }
 
         .lang-btn.active {
-            background: var(--golde);
+            background: var(--white);
             color: var(--background);
         }
 
@@ -60,13 +60,13 @@
 
         body {
             line-height: 1.6;
-            background: var(--background);
+            background: var(--white);
             color: var(--background);
             font-family: Arial, sans-serif;
         }
 
         header {
-            background: var(--background);
+            background: var(--white);
             padding: 0.25rem;
             position: fixed;
             width: 100%;
@@ -81,7 +81,7 @@
             align-items: center;
             position: relative;
             height: 80px;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -105,19 +105,19 @@
             right: 20px;
             display: none;
             cursor: pointer;
-            color: var(--golde);
+            color: var(--background);
             font-size: 1.5rem;
         }
 
         .nav-links a {
-            color: var(--golde);
+            color: var(--background);
             text-decoration: none;
             transition: color 0.3s;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(113, 16, 15, 0.8), rgba(113, 16, 15, 0.8)), url('/pics/IMG_5904.jpeg');
+            background: linear-gradient(#349CA5(113, 16, 15, 0.8), #349CA5(113, 16, 15, 0.8)), url('/pics/IMG_5904.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -126,7 +126,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: var(--golde);
+            color: var(--white);
             padding: 0 1rem;
             padding-bottom: 40%;
         }
@@ -142,8 +142,8 @@
         .cta-button {
             display: inline-block;
             padding: 1rem 2rem;
-            background: var(--background);
-            color: var(--golde);
+            background: var(--white);
+            color: var(--background);
             text-decoration: none;
             border-radius: 5px;
             transition: all 0.3s;
@@ -158,7 +158,7 @@
     align-items: center;
     padding: 1.2rem 2.5rem;
     background: linear-gradient(135deg, #FBDC6A 0%,100%);
-    color: #71100F 50%;
+    color: #349CA5 50%;
     text-decoration: none;
     border-radius: 20px;
     font-weight: 700;
@@ -239,7 +239,7 @@
 .trust-badge {
     display: block;
     font-size: 1.5rem;
-    color: var(--golde);
+    color: var(--white);
     margin-top: 0.5rem;
     opacity: 0.9;
 }
@@ -266,7 +266,7 @@
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
-            color: var(--text);
+            color: var(--background);
             font-size: 2.5rem;
         }
 
@@ -279,14 +279,14 @@
         }
 
         .why_us-image img {
-            width: 80%;
-            border-radius: 10px;
+            width: 120%;
+            border-radius: 50px;
         }
 
         .why_us-text {
             font-size: 1.5rem;
             line-height: 1.8;
-            color: var(--text);
+            color: var(--background);
         }
 
         /* Services Section */
@@ -297,12 +297,12 @@
         }
 
         .service-card {
-            background: var(--golde);
+            background: var(--white);
             padding: 2rem;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s;
-            border: 2px solid var(--text);
+            border: 2px solid var(--background);
         }
 
         .service-card:hover {
@@ -323,11 +323,11 @@
         }
 
         .price-item {
-            background: var(--golde);
+            background: var(--white);
             padding: 2rem;
             border-radius: 10px;
             text-align: center;
-            border: 2px solid var(--text);
+            border: 2px solid var(--background);
             transition: transform 0.3s;
         }
 
@@ -349,7 +349,7 @@
         }
 
         .whatsapp-btn {
-            background: #71100F;
+            background: var(--background);
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -357,11 +357,13 @@
             margin: 2rem 0;
             border-radius: 5px;
             transition: all 0.3s ease;
+            color: var(--white);
         }
 
         .whatsapp-btn:hover {
             transform: scale(1.05);
             background: #008000;
+            color: var(--background);
         }
 
         .email-collection {
@@ -374,13 +376,13 @@
             margin: 1rem 0;
             border: 2px solid var(--background);
             border-radius: 5px;
-            background: transparent;
+            background: var(--background);
             color: var(--background);
         }
 
         .send-email {
             background: var(--background);
-            color: var(--golde);
+            color: var(--white);
             border: none;
             padding: 12px 30px;
             cursor: pointer;
@@ -389,7 +391,7 @@
         }
 
         .send-email:hover {
-            background: var(--golde);
+            background: var(--white);
             color: var(--background);
             border: 2px solid var(--background);
         }
@@ -397,7 +399,7 @@
         /* Footer */
         footer {
             background: var(--background);
-            color: var(--golde);
+            color: var(--white);
             text-align: center;
             padding: 3rem 2rem;
         }
@@ -410,7 +412,7 @@
         }
 
         .social-icons a {
-            color: var(--golde);
+            color: var(--white);
             font-size: 2rem;
             transition: transform 0.3s;
         }
@@ -521,9 +523,9 @@
         flex: 0 0 300px;
         margin: 0 20px;
         padding: 2rem;
-        background: var(--golde);
+        background: var(--white);
         border-radius: 10px;
-        border: 2px solid var(--text);
+        border: 2px solid var(--background);
     }
 
     .feedback-author {
@@ -582,7 +584,7 @@
     }
         /* Feedback Button Styles */
         .feedback-btn {
-        background: var(--golde);
+        background: var(--white);
         color: var(--background) !important;
         padding: 0.5rem 1.5rem;
         border-radius: 20px;
@@ -614,70 +616,46 @@
             width: max-content;
         }
     }
-/* Mobile Header Fix */
+    /* Modified Hero Section with White Overlay */
+.hero {
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                url('/pics/IMG_5904.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text); /* Changed text color to match your dark red */
+}
+
+/* Mobile Version */
 @media (max-width: 768px) {
-    header {
-        padding: 0.5rem;
+    .hero {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                         url('/pics/IMG_5904.jpeg');
     }
-    
-    nav {
-        height: 60px;
-    }
-    
-    .logo {
-        left: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    
+}
+
+/* Header Mobile Fix */
+@media (max-width: 768px) {
     .logo img {
-        width: 60px;
+        width: 50px; /* Smaller logo */
+        margin-left: 5px;
     }
     
     .language-switcher {
-        top: 50%;
-        right: 60px;
-        transform: translateY(-50%);
-        gap: 0.5rem;
+        right: 50px; /* More spacing */
+        gap: 0.3rem;
     }
     
     .menu-toggle {
         right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
     }
     
-    html[dir="rtl"] .logo {
-        right: 10px;
-        left: auto;
+    html[dir="rtl"] .logo img {
+        margin-left: 0;
+        margin-right: 5px;
     }
-    
-    html[dir="rtl"] .language-switcher {
-        left: 60px;
-        right: auto;
-    }
-}
-        /* Mobile Hero Background Fix */
-.hero {
-    background: linear-gradient(rgba(113, 16, 15, 0.8), rgba(113, 16, 15, 0.8)), 
-                url('/pics/IMG_5904.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
-@media (max-width: 768px) {
-    .hero {
-        background-attachment: scroll;
-        background-image: linear-gradient(rgba(113, 16, 15, 0.8), rgba(113, 16, 15, 0.8)), 
-                         url('/pics/IMG_5904-mobile.jpeg'); /* Create mobile-optimized version */
-        height: 80vh;
-    }
-    
-    .hero-content img {
-        max-width: 90%;
-    }
-}
     </style>
 </head>
 <body>
@@ -733,7 +711,7 @@
             <h2 class="section-title" data-i18n="why_us_title">WHY CHOOSE US</h2>
             <div class="why_us-content">
                 <div class="why_us-image">
-                    <img src="/pics/F72480B0-7498-4EF4-909B-3AD31C90EBE6_1_105_c.jpeg" alt="Medical Team">
+                    <img src="/pics/Team.png" alt="Medical Team">
                 </div>
                 <div class="why_us-text" data-i18n="why_us_text"></div>
             </div>
@@ -742,11 +720,11 @@
         <section id="services" class="section">
             <h2 class="section-title" data-i18n="services">SERVICES</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <!-- <div class="service-card">
                     <div class="service-icon"><i class="fas fa-user-md"></i></div>
                     <h3 data-i18n="service1_title">Medical Consultation</h3>
                     <p data-i18n="service1_desc">Expert medical consultation from experienced professionals</p>
-                </div>
+                </div> -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-hand-holding-medical"></i></div>
                     <h3 data-i18n="service2_title">Nursing Services</h3>
@@ -791,7 +769,7 @@
 
         <section id="prices" class="section">
             <h2 class="section-title" data-i18n="prices">PRICES</h2>
-            <div class="prices-grid">
+            <!-- <div class="prices-grid">
                 <div class="price-item">
                     <i class="fas fa-video price-icon"></i>
                     <h3 data-i18n="price1_title">Online Consultation</h3>
@@ -801,11 +779,11 @@
                     <i class="fas fa-home price-icon"></i>
                     <h3 data-i18n="price2_title">Home Visit</h3>
                     <p data-i18n="price2_value">From 300 MAD</p>
-                </div>
+                </div> -->
                 <div class="price-item">
                     <i class="fas fa-user-nurse price-icon"></i>
                     <h3 data-i18n="price3_title">Nursing Services</h3>
-                    <p data-i18n="price3_value">From 100 MAD</p>
+                    <p data-i18n="price3_value">Professional and compassionate nursing care tailored to your needsFrom 100 MAD</p>
                 </div>
                 <div class="price-item">
                     <i class="fas fa-person-running price-icon"></i>
@@ -903,7 +881,7 @@
                     price2_title: "Home Visit",
                     price2_value: "From 300 MAD",
                     price3_title: "Nursing Services",
-                    price3_value: "From 100 MAD",
+                    price3_value: "Professional and compassionate nursing care tailored to your needs From 100 MAD",
                     contact_title: "CONTACT US",
                     whatsapp_cta: "Chat on WhatsApp",
                     email_placeholder: "Enter your email",
@@ -911,11 +889,11 @@
                     copyright: "2025",
                     rights: "All rights reserved",
                     price4_title: "Kinesiotherapy",
-                    price4_value: "From 200 MAD",
+                    price4_value: "Specialized rehabilitation and physiotherapy to enhance mobility, relieve pain, and support recovery. From 200 MAD",
                     price5_title: "Ambulance Services",
-                    price5_value: "From 300 MAD",
+                    price5_value: "Fast and reliable emergency and non-emergency medical transport, ensuring safe and timely assistance From 300 MAD",
                     price6_title: "First Aid Training", 
-                    price6_value: "From 250 MAD/person",
+                    price6_value: "Hands-on training designed to equip you with essential life-saving skills, delivered by certified professionals. From 250 MAD/person",
                     feedbacks: "Client Feedbacks",
                     feedback1: `"Professional service and excellent care!"`,
                     feedback2: `"Quick response and skilled staff."`,
@@ -946,7 +924,7 @@
                     price2_title: "زيارة منزلية",
                     price2_value: "بداية من 300 درهم",
                     price3_title: "خدمات التمريض",
-                    price3_value: "بداية من 100 درهم",
+                    price3_value: " رعاية تمريضية احترافية ورحيمة مصممة خصيصا لتلبية احتياجاتك بداية من 100 درهم",
                     contact_title: "اتصل بنا",
                     whatsapp_cta: "محادثة واتساب",
                     email_placeholder: "أدخل بريدك الإلكتروني",
@@ -954,11 +932,11 @@
                     copyright: "٢٠٢٥",
                     rights: "جميع الحقوق محفوظة",
                     price4_title: "العلاج الطبيعي",
-                    price4_value: "بداية من 200 درهم",
+                    price4_value: " إعادة التأهيل والعلاج الطبيعي المتخصص لتعزيز الحركة وتخفيف الألم ودعم الشفاء بداية من 200 درهم",
                     price5_title: "خدمات الإسعاف",
-                    price5_value: "بداية من 300 درهم",
+                    price5_value: " النقل الطبي الطارئ وغير الطارئ السريع والموثوق به، مما يضمن المساعدة الآمنة وفي الوقت المناسب بداية من 300 درهم",
                     price6_title: "تدريب الإسعافات الأولية",
-                    price6_value: "بداية من 250 درهم/شخص",
+                    price6_value: " تدريب عملي مصمم لتزويدك بالمهارات الأساسية لإنقاذ الأرواح، يقدمه محترفون معتمدون. بداية من 250 درهم/شخص",
                     feedbacks: "آراء العملاء",
                     feedback1: `"خدمة احترافية ورعاية ممتازة!"`,
                     feedback2: `"استجابة سريعة وطاقم ماهر."`,
@@ -987,9 +965,9 @@
                     price1_title: "Consultation en ligne",
                     price1_value: "À partir de 50 MAD",
                     price2_title: "Visite à domicile",
-                    price2_value: "À partir de 300 MAD",
+                    price2_value: "Transport médical d'urgence et non urgent rapide et fiable, assurant une assistance sûre et opportune À partir de 300 MAD",
                     price3_title: "Soins infirmiers",
-                    price3_value: "À partir de 100 MAD",
+                    price3_value: "Soins infirmiers professionnels et compatissants adaptés à vos besoins À partir de 100 MAD",
                     contact_title: "NOUS CONTACTER",
                     whatsapp_cta: "Discuter sur WhatsApp",
                     email_placeholder: "Entrez votre email",
@@ -997,11 +975,11 @@
                     copyright: "2025",
                     rights: "Tous droits réservés",
                     price4_title: "Kinésithérapie",
-                    price4_value: "À partir de 200 MAD",
+                    price4_value: "Rééducation et physiothérapie spécialisées pour améliorer la mobilité, soulager la douleur et soutenir la récupération. À partir de 200 MAD",
                     price5_title: "Services d'ambulance",
                     price5_value: "À partir de 300 MAD",
                     price6_title: "Formation premiers secours",
-                    price6_value: "À partir de 250 MAD/personne",
+                    price6_value: "Formation pratique conçue pour vous doter de compétences essentielles pour sauver des vies, dispensée par des professionnels certifiés. À partir de 250 MAD/personne",
                     feedbacks: "Avis des Clients",
                     feedback1: `"Service professionnel et excellente prise en charge!"`,
                     feedback2: `"Réponse rapide et personnel qualifié."`,
